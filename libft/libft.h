@@ -6,7 +6,7 @@
 /*   By: jschotte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:27:04 by jschotte          #+#    #+#             */
-/*   Updated: 2017/05/17 15:36:17 by jschotte         ###   ########.fr       */
+/*   Updated: 2017/05/24 00:55:43 by jschotte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,6 @@ void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_abs(int n);
 char	*ft_freejoin(char *s1, char *s2);
-int			get_next_line(int const fd, char **line);
+int		get_next_line(int const fd, char **line);
 
 #endif

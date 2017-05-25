@@ -6,25 +6,28 @@
 /*   By: jschotte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 09:30:10 by jschotte          #+#    #+#             */
-/*   Updated: 2017/05/18 09:28:46 by jschotte         ###   ########.fr       */
+/*   Updated: 2017/05/24 00:54:23 by jschotte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void     allocation(char **buff, char ***mem)
+static void		allocation(char **buff, char ***mem)
 {
 	char *tmp;
+
 	tmp = ft_strjoin(**mem, *buff);
 	free(**mem);
 	**mem = ft_strdup(tmp);
 	free(tmp);
 	tmp = NULL;
 }
-static int      gnl_check(char **mem, char **line)
+
+static int		gnl_check(char **mem, char **line)
 {
-	int     size;
-	char    *tmp;
+	int		size;
+	char	*tmp;
+
 	if (ft_strchr(*mem, '\n') != NULL)
 	{
 		size = ft_strchr(*mem, '\n') - *mem;
@@ -39,10 +42,12 @@ static int      gnl_check(char **mem, char **line)
 	}
 	return (0);
 }
-static void     gnl_read_check(char **buff, int count, char **line, char ***mem)
+
+static void		gnl_read_check(char **buff, int count, char **line, char ***mem)
 {
-	int     size;
-	char    *tmp;
+	int		size;
+	char	*tmp;
+
 	size = ft_strchr(*buff, '\n') - *buff;
 	tmp = ft_strsub(*buff, 0, size);
 	if (**mem)
@@ -55,9 +60,11 @@ static void     gnl_read_check(char **buff, int count, char **line, char ***mem)
 	**mem = ft_strsub(*buff, (size + 1), count);
 	free(tmp);
 }
-static int      gnl_read(int fd, int count, char **mem, char **line)
+
+static int		gnl_read(int fd, int count, char **mem, char **line)
 {
-	char        *buff;
+	char	*buff;
+
 	buff = ft_strnew(BUFF_SIZE);
 	while ((count = read(fd, buff, BUFF_SIZE)))
 	{
@@ -78,10 +85,12 @@ static int      gnl_read(int fd, int count, char **mem, char **line)
 	buff = NULL;
 	return (count);
 }
-int             get_next_line(int fd, char **line)
+
+int				get_next_line(int fd, char **line)
 {
 	static char *mem;
-	int         count;
+	int			count;
+
 	if (BUFF_SIZE <= 0 || fd < 0 || line == NULL)
 		return (-1);
 	if (mem)

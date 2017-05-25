@@ -6,24 +6,25 @@
 /*   By: jschotte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 16:31:21 by jschotte          #+#    #+#             */
-/*   Updated: 2017/05/18 05:01:44 by jschotte         ###   ########.fr       */
+/*   Updated: 2017/05/24 00:51:34 by jschotte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static char *del_spaces(const char *s, char c)
+static char		*del_spaces(const char *s, char c)
 {
 	while (*s == c)
 		s++;
 	return ((char*)s);
 }
 
-static int  nb_w(const char *str, char c)
+static int		nb_w(const char *str, char c)
 {
 	int i;
 	int nb;
+
 	i = 0;
 	nb = 0;
 	while (str && *(str + i))
@@ -38,10 +39,11 @@ static int  nb_w(const char *str, char c)
 	return (nb);
 }
 
-static int  ft_strlen_c(const char *s, char c)
+static int		ft_strlen_c(const char *s, char c)
 {
 	int nb;
 	int i;
+
 	nb = 0;
 	i = 0;
 	while (s[i] != c && s[i] != '\0')
@@ -52,19 +54,20 @@ static int  ft_strlen_c(const char *s, char c)
 	return (nb);
 }
 
-static void zbeub(int *i, int *mots, const char *s, char c)
+static void		zbeub(int *i, int *mots, const char *s, char c)
 {
 	*i = -1;
 	*mots = nb_w(s, c);
 }
 
-char        **ft_strsplit(const char *s, char c)
+char			**ft_strsplit(const char *s, char c)
 {
 	int i;
 	int j;
 	char**t;
 	int mots;
 	int taille;
+
 	if (!s)
 		return (NULL);
 	s = del_spaces(s, c);

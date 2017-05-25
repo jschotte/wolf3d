@@ -6,7 +6,7 @@
 #    By: jschotte <jschotte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/07 17:32:23 by jschotte          #+#    #+#              #
-#    Updated: 2017/05/18 08:08:09 by jschotte         ###   ########.fr        #
+#    Updated: 2017/05/24 19:35:35 by jschotte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,20 @@ NAME            =   wolf3d
 
 SRC             =   main.c \
 					draw.c \
-					key.c
+					key.c \
+					joystick.c \
+					commands.c \
+					commands2.c \
+					map.c \
+					calc.c \
+					calc2.c \
+					player.c
 
 INC             =   ./includes/wolf.h
 OBJ             =   $(addprefix $(OBJ_PATH),$(SRC:.c=.o))
 CC              =   gcc
-FLAGS           =   # -Wall -Wextra -Werror
-FLAGS			=	#-fsanitize=thread
+FLAGS           =    -Wall -Wextra -Werror
+FLAGS			+=	#-fsanitize=thread
 SRC_PATH        =   ./src/
 INC_PATH        =   ./includes/
 OBJ_PATH        =   ./obj/
