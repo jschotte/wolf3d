@@ -6,7 +6,7 @@
 /*   By: jschotte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/14 21:16:20 by jschotte          #+#    #+#             */
-/*   Updated: 2017/05/24 19:24:33 by jschotte         ###   ########.fr       */
+/*   Updated: 2017/06/07 14:44:40 by jschotte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ t_env	*init_env(SDL_Surface *screen)
 	tmp->full = 0;
 	tmp->lowcost = 0;
 	tmp->start = 0;
-	tmp->ismap = 1;
+	tmp->ismap = 0;
 	tmp->map_path = "./maps/map1";
 	tmp->map = NULL;
 	tmp->player = NULL;
